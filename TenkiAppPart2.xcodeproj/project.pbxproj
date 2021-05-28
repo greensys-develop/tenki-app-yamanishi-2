@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C80FCEF5E3F5C645B0FEC92 /* Pods_TenkiAppPart2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */; };
+		A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FC265DD63800770904 /* AppDelegate.swift */; };
+		A189D9FF265DD63800770904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FE265DD63800770904 /* SceneDelegate.swift */; };
+		A189DA01265DD63800770904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA00265DD63800770904 /* ViewController.swift */; };
+		A189DA04265DD63800770904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A189DA02265DD63800770904 /* Main.storyboard */; };
+		A189DA06265DD63900770904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A189DA05265DD63900770904 /* Assets.xcassets */; };
+		A189DA09265DD63900770904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A189DA07265DD63900770904 /* LaunchScreen.storyboard */; };
+		A189DA11265DE46900770904 /* PrefectureTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A189DA10265DE46900770904 /* PrefectureTableView.storyboard */; };
+		A189DA13265DE48800770904 /* PrefectureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA12265DE48800770904 /* PrefectureTableViewController.swift */; };
+		A189DA15265DE62900770904 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA14265DE62900770904 /* Prefecture.swift */; };
+		A189DA17265E061900770904 /* WeatherDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A189DA16265E061900770904 /* WeatherDetailView.storyboard */; };
+		A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA18265E075800770904 /* WeatherDetailViewController.swift */; };
+		A189DA1B265E189400770904 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA1A265E189400770904 /* Api.swift */; };
+		A189DA47265E25F700770904 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA46265E25F700770904 /* Request.swift */; };
+		A189DA4F265E2E5100770904 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA4E265E2E5100770904 /* WeatherModel.swift */; };
+		A189DA51265F419D00770904 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA50265F419D00770904 /* Util.swift */; };
+		A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA53265F53B800770904 /* UIImageViewExtension.swift */; };
+		A189DA56265F58C300770904 /* OneCallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA55265F58C300770904 /* OneCallModel.swift */; };
+		A189DA58265F591D00770904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA57265F591D00770904 /* LocationManager.swift */; };
+		A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA592660A8E800770904 /* ListViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B30792B7A30FDB08647A433 /* Pods-TenkiAppPart2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenkiAppPart2.debug.xcconfig"; path = "Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2.debug.xcconfig"; sourceTree = "<group>"; };
+		A189D9F9265DD63800770904 /* TenkiAppPart2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenkiAppPart2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A189D9FC265DD63800770904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A189D9FE265DD63800770904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A189DA00265DD63800770904 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A189DA03265DD63800770904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A189DA05265DD63900770904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A189DA08265DD63900770904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A189DA0A265DD63900770904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A189DA10265DE46900770904 /* PrefectureTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrefectureTableView.storyboard; sourceTree = "<group>"; };
+		A189DA12265DE48800770904 /* PrefectureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureTableViewController.swift; sourceTree = "<group>"; };
+		A189DA14265DE62900770904 /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
+		A189DA16265E061900770904 /* WeatherDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherDetailView.storyboard; sourceTree = "<group>"; };
+		A189DA18265E075800770904 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		A189DA1A265E189400770904 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		A189DA46265E25F700770904 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		A189DA4E265E2E5100770904 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		A189DA50265F419D00770904 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		A189DA53265F53B800770904 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		A189DA55265F58C300770904 /* OneCallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallModel.swift; sourceTree = "<group>"; };
+		A189DA57265F591D00770904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A189DA592660A8E800770904 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenkiAppPart2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E11DE880972577FE60E096 /* Pods-TenkiAppPart2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenkiAppPart2.release.xcconfig"; path = "Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A189D9F6265DD63800770904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C80FCEF5E3F5C645B0FEC92 /* Pods_TenkiAppPart2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EE4BC6D614CB5E2A20069AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B30792B7A30FDB08647A433 /* Pods-TenkiAppPart2.debug.xcconfig */,
+				D0E11DE880972577FE60E096 /* Pods-TenkiAppPart2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A189D9F0265DD63800770904 = {
+			isa = PBXGroup;
+			children = (
+				A189D9FB265DD63800770904 /* TenkiAppPart2 */,
+				A189D9FA265DD63800770904 /* Products */,
+				0EE4BC6D614CB5E2A20069AA /* Pods */,
+				AF01569DC983C3459973B801 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A189D9FA265DD63800770904 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A189D9F9265DD63800770904 /* TenkiAppPart2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A189D9FB265DD63800770904 /* TenkiAppPart2 */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA52265F539A00770904 /* Extension */,
+				A189DA4C265E2C0E00770904 /* Util */,
+				A189DA4B265E2BEC00770904 /* StoryBoard */,
+				A189DA4A265E265500770904 /* ViewModels */,
+				A189DA49265E264800770904 /* Views */,
+				A189DA48265E263F00770904 /* Models */,
+				A189DA05265DD63900770904 /* Assets.xcassets */,
+				A189D9FC265DD63800770904 /* AppDelegate.swift */,
+				A189D9FE265DD63800770904 /* SceneDelegate.swift */,
+				A189DA07265DD63900770904 /* LaunchScreen.storyboard */,
+				A189DA0A265DD63900770904 /* Info.plist */,
+			);
+			path = TenkiAppPart2;
+			sourceTree = "<group>";
+		};
+		A189DA48265E263F00770904 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA1A265E189400770904 /* Api.swift */,
+				A189DA46265E25F700770904 /* Request.swift */,
+				A189DA4E265E2E5100770904 /* WeatherModel.swift */,
+				A189DA55265F58C300770904 /* OneCallModel.swift */,
+				A189DA57265F591D00770904 /* LocationManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A189DA49265E264800770904 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA12265DE48800770904 /* PrefectureTableViewController.swift */,
+				A189DA00265DD63800770904 /* ViewController.swift */,
+				A189DA18265E075800770904 /* WeatherDetailViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A189DA4A265E265500770904 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA592660A8E800770904 /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A189DA4B265E2BEC00770904 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA02265DD63800770904 /* Main.storyboard */,
+				A189DA10265DE46900770904 /* PrefectureTableView.storyboard */,
+				A189DA16265E061900770904 /* WeatherDetailView.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		A189DA4C265E2C0E00770904 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA14265DE62900770904 /* Prefecture.swift */,
+				A189DA50265F419D00770904 /* Util.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A189DA52265F539A00770904 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA53265F53B800770904 /* UIImageViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AF01569DC983C3459973B801 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A189D9F8265DD63800770904 /* TenkiAppPart2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A189DA0D265DD63900770904 /* Build configuration list for PBXNativeTarget "TenkiAppPart2" */;
+			buildPhases = (
+				043F950482A4C20EE71A9A75 /* [CP] Check Pods Manifest.lock */,
+				A189D9F5265DD63800770904 /* Sources */,
+				A189D9F6265DD63800770904 /* Frameworks */,
+				A189D9F7265DD63800770904 /* Resources */,
+				3D1A68D05799C5E7162A0BE8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TenkiAppPart2;
+			productName = TenkiAppPart2;
+			productReference = A189D9F9265DD63800770904 /* TenkiAppPart2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A189D9F1265DD63800770904 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					A189D9F8265DD63800770904 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = A189D9F4265DD63800770904 /* Build configuration list for PBXProject "TenkiAppPart2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A189D9F0265DD63800770904;
+			productRefGroup = A189D9FA265DD63800770904 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A189D9F8265DD63800770904 /* TenkiAppPart2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A189D9F7265DD63800770904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A189DA09265DD63900770904 /* LaunchScreen.storyboard in Resources */,
+				A189DA11265DE46900770904 /* PrefectureTableView.storyboard in Resources */,
+				A189DA06265DD63900770904 /* Assets.xcassets in Resources */,
+				A189DA17265E061900770904 /* WeatherDetailView.storyboard in Resources */,
+				A189DA04265DD63800770904 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		043F950482A4C20EE71A9A75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TenkiAppPart2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D1A68D05799C5E7162A0BE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A189D9F5265DD63800770904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A189DA56265F58C300770904 /* OneCallModel.swift in Sources */,
+				A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */,
+				A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */,
+				A189DA4F265E2E5100770904 /* WeatherModel.swift in Sources */,
+				A189DA47265E25F700770904 /* Request.swift in Sources */,
+				A189DA01265DD63800770904 /* ViewController.swift in Sources */,
+				A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */,
+				A189DA15265DE62900770904 /* Prefecture.swift in Sources */,
+				A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */,
+				A189DA13265DE48800770904 /* PrefectureTableViewController.swift in Sources */,
+				A189DA51265F419D00770904 /* Util.swift in Sources */,
+				A189DA1B265E189400770904 /* Api.swift in Sources */,
+				A189D9FF265DD63800770904 /* SceneDelegate.swift in Sources */,
+				A189DA58265F591D00770904 /* LocationManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A189DA02265DD63800770904 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A189DA03265DD63800770904 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A189DA07265DD63900770904 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A189DA08265DD63900770904 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A189DA0B265DD63900770904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A189DA0C265DD63900770904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A189DA0E265DD63900770904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B30792B7A30FDB08647A433 /* Pods-TenkiAppPart2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N6SF284JKX;
+				INFOPLIST_FILE = TenkiAppPart2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = greensys.TenkiAppPart2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A189DA0F265DD63900770904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0E11DE880972577FE60E096 /* Pods-TenkiAppPart2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N6SF284JKX;
+				INFOPLIST_FILE = TenkiAppPart2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = greensys.TenkiAppPart2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A189D9F4265DD63800770904 /* Build configuration list for PBXProject "TenkiAppPart2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A189DA0B265DD63900770904 /* Debug */,
+				A189DA0C265DD63900770904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A189DA0D265DD63900770904 /* Build configuration list for PBXNativeTarget "TenkiAppPart2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A189DA0E265DD63900770904 /* Debug */,
+				A189DA0F265DD63900770904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A189D9F1265DD63800770904 /* Project object */;
+}

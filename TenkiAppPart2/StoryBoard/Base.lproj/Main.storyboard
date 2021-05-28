@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="amY-uL-v9a">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TenkiAppPart2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TwU-03-tWm">
+                                <rect key="frame" x="82" y="188" width="250" height="410"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ead-9A-vRr">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="q6V-Ed-sNp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwe-Yx-UeH">
+                                        <rect key="frame" x="0.0" y="220" width="250" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.73864696480000003" blue="0.94557783309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="cSi-9P-hQF"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="都道府県を選択"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfh-vd-fiU">
+                                        <rect key="frame" x="0.0" y="290" width="250" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.73864696480000003" blue="0.94557783309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="現在地の天気"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyb-7q-Foe">
+                                        <rect key="frame" x="0.0" y="360" width="250" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.73864696480000003" blue="0.94557783309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="現在地の週間天気"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Pwe-Yx-UeH" secondAttribute="trailing" id="KDB-ep-GGI"/>
+                                    <constraint firstItem="nfh-vd-fiU" firstAttribute="height" secondItem="Pwe-Yx-UeH" secondAttribute="height" id="RtL-nJ-pV5"/>
+                                    <constraint firstItem="jyb-7q-Foe" firstAttribute="leading" secondItem="TwU-03-tWm" secondAttribute="leading" id="YxW-6z-MwK"/>
+                                    <constraint firstAttribute="trailing" secondItem="nfh-vd-fiU" secondAttribute="trailing" id="joc-uG-XB2"/>
+                                    <constraint firstAttribute="trailing" secondItem="jyb-7q-Foe" secondAttribute="trailing" id="pBS-EL-xRc"/>
+                                    <constraint firstItem="jyb-7q-Foe" firstAttribute="height" secondItem="Pwe-Yx-UeH" secondAttribute="height" id="pXo-g8-RVl"/>
+                                    <constraint firstAttribute="width" constant="250" id="ucM-PO-9Af"/>
+                                    <constraint firstItem="Pwe-Yx-UeH" firstAttribute="leading" secondItem="TwU-03-tWm" secondAttribute="leading" id="vhH-c6-5Fa"/>
+                                    <constraint firstItem="nfh-vd-fiU" firstAttribute="leading" secondItem="TwU-03-tWm" secondAttribute="leading" id="xyd-ED-Pck"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TwU-03-tWm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="SdJ-eO-zUp"/>
+                            <constraint firstItem="TwU-03-tWm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TdY-6K-BuA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6RA-QS-Z7b"/>
+                    <connections>
+                        <outlet property="button1" destination="Pwe-Yx-UeH" id="Sg3-hM-LN4"/>
+                        <outlet property="button2" destination="nfh-vd-fiU" id="zNA-vD-tHh"/>
+                        <outlet property="button3" destination="jyb-7q-Foe" id="Lv5-k2-NHS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="123.88392857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kFq-jF-gF9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="amY-uL-v9a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xyh-87-HYW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="q1F-B1-75p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xSX-6M-2Q8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="top" width="400" height="366"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
