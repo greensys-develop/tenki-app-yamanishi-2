@@ -20,6 +20,7 @@ class WeatherDetailViewController: UIViewController {
     var dateIsToday = false
     var prefectureFlag = false
     var dailySelectedItem: Daily?
+    var dailyLists: Observable<Daily>?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

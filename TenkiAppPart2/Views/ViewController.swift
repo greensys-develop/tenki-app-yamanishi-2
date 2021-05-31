@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button3: UIButton!
     let cornerRadiusInt: CGFloat = 5
     private let disposeBag = DisposeBag()
-    private let listViewModel = ListViewModel()
+//    private let listViewModel = ListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
                         return
                     }
                     DispatchQueue.main.async {
-                        nextView.dailyList = daily
+                        nextView.dailyLists = .just(daily)
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
                 case let .failure(error):

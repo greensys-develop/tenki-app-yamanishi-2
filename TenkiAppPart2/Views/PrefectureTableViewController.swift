@@ -10,16 +10,13 @@ import RxSwift
 import RxCocoa
 
 class PrefectureTableViewController: ViewController {
-//                                     , UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var tableView: UITableView!
     
     var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
     var isWeekly = false
-//    var dailyList: [Daily] = []
     var dailyLists: Observable<[Daily]> = .just([])
     private let disposeBag = DisposeBag()
-//    private let listViewModel = ListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +35,20 @@ class PrefectureTableViewController: ViewController {
         }
         
         // tableViewのセルをタップした時のメソッド
+        let storyboard: UIStoryboard = UIStoryboard(name: "WeatherDetailView", bundle: nil)
+        let nextView = storyboard.instantiateViewController(withIdentifier: "WeatherDetailView") as! WeatherDetailViewController
+        
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
-                // func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-                print(indexPath.row)
+                if self.isWeekly {
+                    nextView.dailySelectedItem = self.dailyLists[indexPath.row]
+                } else {
+//                    nextView.selectedItem = prefecture[indexPath.row]
+//                    nextView.prefectureFlag = true
+//                    nextView.dateIsToday = true
+                }
             })
             .disposed(by: disposeBag)
-        
-//        tableView.delegate = self
-//        tableView.dataSource = self
     }
 
 //    func numberOfSections(in tableView: UITableView) -> Int {
