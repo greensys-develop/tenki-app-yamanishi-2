@@ -114,7 +114,7 @@ class ViewController: UIViewController {
                         return
                     }
                     DispatchQueue.main.async {
-                        nextView.dailyLists = .just(daily)
+                        nextView.dailyLists = .init(value: daily)
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
                 case let .failure(error):

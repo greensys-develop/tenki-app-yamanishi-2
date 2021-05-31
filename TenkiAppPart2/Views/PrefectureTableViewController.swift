@@ -15,7 +15,7 @@ class PrefectureTableViewController: ViewController {
     
     var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
     var isWeekly = false
-    var dailyLists: Observable<[Daily]> = .just([])
+    var dailyLists: BehaviorRelay<[Daily]> = .init(value: [])
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -41,7 +41,8 @@ class PrefectureTableViewController: ViewController {
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 if self.isWeekly {
-                    nextView.dailySelectedItem = self.dailyLists[indexPath.row]
+                    nextView.dailySelectedItem = self.dailyLists.value[indexPath.row]
+                    print(nextView.dailySelectedItem)
                 } else {
 //                    nextView.selectedItem = prefecture[indexPath.row]
 //                    nextView.prefectureFlag = true
