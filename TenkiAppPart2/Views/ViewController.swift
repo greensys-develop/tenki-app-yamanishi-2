@@ -18,16 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var button3: UIButton!
     let cornerRadiusInt: CGFloat = 5
     private let disposeBag = DisposeBag()
-//    private let listViewModel = ListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
-        
-//        button1.rx.tap.subscribe({ [weak self] _ in
-//            print("button1")
-//        }).disposed(by: disposeBag)
         
         button1?.rx.tap.bind(to: button1TapBinder).disposed(by: disposeBag)
         button2?.rx.tap.bind(to: button2TapBinder).disposed(by: disposeBag)
@@ -114,7 +109,7 @@ class ViewController: UIViewController {
                         return
                     }
                     DispatchQueue.main.async {
-                        nextView.dailyLists = .just(daily)
+                        nextView.dailyLists = .init(value: daily)
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
                 case let .failure(error):

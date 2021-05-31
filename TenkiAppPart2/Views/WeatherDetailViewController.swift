@@ -20,7 +20,6 @@ class WeatherDetailViewController: UIViewController {
     var dateIsToday = false
     var prefectureFlag = false
     var dailySelectedItem: Daily?
-    var dailyLists: Observable<Daily>?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -38,11 +37,14 @@ class WeatherDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setupDate()
-        initSetupView()
-        setupMoya()
         
         // rx
         cancelButton?.rx.tap.bind(to: cancelButtonTapBinder).disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initSetupView()
+        setupMoya()
     }
     
     private func apiSetupViews(data: WeatherModel) {
@@ -61,6 +63,7 @@ class WeatherDetailViewController: UIViewController {
     
     private func apiSetupViews(data: Daily) {
         titleLabel.text = LocationManager.shared.placeName
+        dateLabel.text = Util.unixToString(date: TimeInterval(data.dt))
         maxTempLabel.text = "最高気温：" + String(round(data.temp.max - 273.15)) + "℃"
         minTempLabel.text = "最低気温：" + String(round(data.temp.min - 273.15)) + "℃"
         humidilyLabel.text = "湿度：" + String(data.humidity) + "%"
