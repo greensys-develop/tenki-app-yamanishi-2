@@ -13,25 +13,20 @@ import PKHUD
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var prefectureButton: UIButton!
+    @IBOutlet weak var currentLocationButton: UIButton!
+    @IBOutlet weak var weeklyButton: UIButton!
     let cornerRadiusInt: CGFloat = 5
     private let disposeBag = DisposeBag()
-//    private let listViewModel = ListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         
-//        button1.rx.tap.subscribe({ [weak self] _ in
-//            print("button1")
-//        }).disposed(by: disposeBag)
-        
-        button1?.rx.tap.bind(to: button1TapBinder).disposed(by: disposeBag)
-        button2?.rx.tap.bind(to: button2TapBinder).disposed(by: disposeBag)
-        button3?.rx.tap.bind(to: button3TapBinder).disposed(by: disposeBag)
+        prefectureButton?.rx.tap.bind(to: button1TapBinder).disposed(by: disposeBag)
+        currentLocationButton?.rx.tap.bind(to: button2TapBinder).disposed(by: disposeBag)
+        weeklyButton?.rx.tap.bind(to: button3TapBinder).disposed(by: disposeBag)
         
         // 現在地の取得
         LocationManager.shared.initialize()
@@ -103,18 +98,15 @@ class ViewController: UIViewController {
             nextView.navigationItem.title = "現在地の週間天気"
             
             // 週間天気のAPIを取得
-            let provider = MoyaProvider<WeeklyCurrentLocationWeatherRequest>()
-            provider.request(WeeklyCurrentLocationWeatherRequest(coordinate: (lat: coordinate.latitude, lon: coordinate.latitude))) { (result) in
+            WeatherAPIService().send(WeatherAPIService.WeeklyCurrentLocationWeatherRequest(coordinate: (lat: coordinate.latitude, lon: coordinate.longitude))) { (result) in
                 switch result {
                 case let .success(response):
-                    let decoder = JSONDecoder()
-                    let data = try! decoder.decode(OneCallModel.self, from: response.data)
-                    guard let daily = data.daily, !daily.isEmpty else {
+                    guard let daily = response.daily, !daily.isEmpty else {
                         HUD.flash(.labeledError(title: "通信が正常動作できませんでした。", subtitle: nil))
                         return
                     }
                     DispatchQueue.main.async {
-                        nextView.dailyLists = .just(daily)
+                        nextView.dailyLists = .init(value: daily)
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
                 case let .failure(error):
@@ -125,13 +117,13 @@ class ViewController: UIViewController {
     }
     
     private func setupViews() {
-        button1?.layer.cornerRadius = cornerRadiusInt
-        button2?.layer.cornerRadius = cornerRadiusInt
-        button3?.layer.cornerRadius = cornerRadiusInt
+        prefectureButton?.layer.cornerRadius = cornerRadiusInt
+        currentLocationButton?.layer.cornerRadius = cornerRadiusInt
+        weeklyButton?.layer.cornerRadius = cornerRadiusInt
         
-        button1?.tintColor = .gray
-        button2?.tintColor = .gray
-        button3?.tintColor = .gray
+        prefectureButton?.tintColor = .gray
+        currentLocationButton?.tintColor = .gray
+        weeklyButton?.tintColor = .gray
     }
 
 }

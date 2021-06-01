@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C80FCEF5E3F5C645B0FEC92 /* Pods_TenkiAppPart2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */; };
+		A13A727F2664CFB800187C67 /* CurrentLocationWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A727E2664CFB800187C67 /* CurrentLocationWeatherRequest.swift */; };
+		A13A72812664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A72802664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift */; };
 		A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FC265DD63800770904 /* AppDelegate.swift */; };
 		A189D9FF265DD63800770904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FE265DD63800770904 /* SceneDelegate.swift */; };
 		A189DA01265DD63800770904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA00265DD63800770904 /* ViewController.swift */; };
@@ -19,18 +21,20 @@
 		A189DA15265DE62900770904 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA14265DE62900770904 /* Prefecture.swift */; };
 		A189DA17265E061900770904 /* WeatherDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A189DA16265E061900770904 /* WeatherDetailView.storyboard */; };
 		A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA18265E075800770904 /* WeatherDetailViewController.swift */; };
-		A189DA1B265E189400770904 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA1A265E189400770904 /* Api.swift */; };
-		A189DA47265E25F700770904 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA46265E25F700770904 /* Request.swift */; };
-		A189DA4F265E2E5100770904 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA4E265E2E5100770904 /* WeatherModel.swift */; };
+		A189DA1B265E189400770904 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA1A265E189400770904 /* ApiService.swift */; };
+		A189DA47265E25F700770904 /* PrefectureWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA46265E25F700770904 /* PrefectureWeatherRequest.swift */; };
+		A189DA4F265E2E5100770904 /* WeatherModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */; };
 		A189DA51265F419D00770904 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA50265F419D00770904 /* Util.swift */; };
 		A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA53265F53B800770904 /* UIImageViewExtension.swift */; };
-		A189DA56265F58C300770904 /* OneCallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA55265F58C300770904 /* OneCallModel.swift */; };
+		A189DA56265F58C300770904 /* OneCallModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA55265F58C300770904 /* OneCallModelResponse.swift */; };
 		A189DA58265F591D00770904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA57265F591D00770904 /* LocationManager.swift */; };
 		A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA592660A8E800770904 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B30792B7A30FDB08647A433 /* Pods-TenkiAppPart2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenkiAppPart2.debug.xcconfig"; path = "Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2.debug.xcconfig"; sourceTree = "<group>"; };
+		A13A727E2664CFB800187C67 /* CurrentLocationWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationWeatherRequest.swift; sourceTree = "<group>"; };
+		A13A72802664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCurrentLocationWeatherRequest.swift; sourceTree = "<group>"; };
 		A189D9F9265DD63800770904 /* TenkiAppPart2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenkiAppPart2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A189D9FC265DD63800770904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A189D9FE265DD63800770904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,12 +48,12 @@
 		A189DA14265DE62900770904 /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		A189DA16265E061900770904 /* WeatherDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherDetailView.storyboard; sourceTree = "<group>"; };
 		A189DA18265E075800770904 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
-		A189DA1A265E189400770904 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		A189DA46265E25F700770904 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		A189DA4E265E2E5100770904 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		A189DA1A265E189400770904 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A189DA46265E25F700770904 /* PrefectureWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureWeatherRequest.swift; sourceTree = "<group>"; };
+		A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelResponse.swift; sourceTree = "<group>"; };
 		A189DA50265F419D00770904 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		A189DA53265F53B800770904 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		A189DA55265F58C300770904 /* OneCallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallModel.swift; sourceTree = "<group>"; };
+		A189DA55265F58C300770904 /* OneCallModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallModelResponse.swift; sourceTree = "<group>"; };
 		A189DA57265F591D00770904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A189DA592660A8E800770904 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenkiAppPart2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +79,33 @@
 				D0E11DE880972577FE60E096 /* Pods-TenkiAppPart2.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A13A72822664D0A300187C67 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA1A265E189400770904 /* ApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A13A72832664D0AF00187C67 /* Renponse */ = {
+			isa = PBXGroup;
+			children = (
+				A189DA55265F58C300770904 /* OneCallModelResponse.swift */,
+				A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */,
+			);
+			path = Renponse;
+			sourceTree = "<group>";
+		};
+		A13A72842664D0BD00187C67 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				A13A72802664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift */,
+				A13A727E2664CFB800187C67 /* CurrentLocationWeatherRequest.swift */,
+				A189DA46265E25F700770904 /* PrefectureWeatherRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		A189D9F0265DD63800770904 = {
@@ -116,10 +147,9 @@
 		A189DA48265E263F00770904 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A189DA1A265E189400770904 /* Api.swift */,
-				A189DA46265E25F700770904 /* Request.swift */,
-				A189DA4E265E2E5100770904 /* WeatherModel.swift */,
-				A189DA55265F58C300770904 /* OneCallModel.swift */,
+				A13A72842664D0BD00187C67 /* Request */,
+				A13A72832664D0AF00187C67 /* Renponse */,
+				A13A72822664D0A300187C67 /* Service */,
 				A189DA57265F591D00770904 /* LocationManager.swift */,
 			);
 			path = Models;
@@ -294,18 +324,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A189DA56265F58C300770904 /* OneCallModel.swift in Sources */,
+				A189DA56265F58C300770904 /* OneCallModelResponse.swift in Sources */,
 				A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */,
 				A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */,
-				A189DA4F265E2E5100770904 /* WeatherModel.swift in Sources */,
-				A189DA47265E25F700770904 /* Request.swift in Sources */,
+				A189DA4F265E2E5100770904 /* WeatherModelResponse.swift in Sources */,
+				A189DA47265E25F700770904 /* PrefectureWeatherRequest.swift in Sources */,
 				A189DA01265DD63800770904 /* ViewController.swift in Sources */,
 				A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */,
 				A189DA15265DE62900770904 /* Prefecture.swift in Sources */,
+				A13A727F2664CFB800187C67 /* CurrentLocationWeatherRequest.swift in Sources */,
 				A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */,
+				A13A72812664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift in Sources */,
 				A189DA13265DE48800770904 /* PrefectureTableViewController.swift in Sources */,
 				A189DA51265F419D00770904 /* Util.swift in Sources */,
-				A189DA1B265E189400770904 /* Api.swift in Sources */,
+				A189DA1B265E189400770904 /* ApiService.swift in Sources */,
 				A189D9FF265DD63800770904 /* SceneDelegate.swift in Sources */,
 				A189DA58265F591D00770904 /* LocationManager.swift in Sources */,
 			);

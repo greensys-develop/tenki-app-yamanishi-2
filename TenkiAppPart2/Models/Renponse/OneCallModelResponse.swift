@@ -76,26 +76,6 @@ struct Daily: Codable {
     let pop: Double
     let rain: Double?
     let uvi: Double
-    
-    init(dt: Int, sunrise: Int, sunset: Int, moonrise: Int, moon_phase: Double, temp: Temp, pressure: Int, humidity: Int, dew_point: Double, wind_speed: Double, wind_deg: Int, wind_gust: Double, weather: [Weather], clouds: Int, pop: Double, rain: Double?, uvi: Double) {
-        self.dt = dt
-        self.sunrise = sunrise
-        self.sunset = sunset
-        self.moonrise = moonrise
-        self.moon_phase = moon_phase
-        self.temp = temp
-        self.pressure = pressure
-        self.humidity = humidity
-        self.dew_point = dew_point
-        self.wind_speed = wind_speed
-        self.wind_deg = wind_deg
-        self.wind_gust = wind_gust
-        self.weather = weather
-        self.clouds = clouds
-        self.pop = pop
-        self.rain = rain
-        self.uvi = uvi
-    }
 }
 
 struct Temp: Codable {
