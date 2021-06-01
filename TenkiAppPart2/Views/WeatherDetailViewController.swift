@@ -87,13 +87,10 @@ class WeatherDetailViewController: UIViewController {
             if prefectureFlag {
                 if let item = selectedItem {
                     // 都道府県の天気を表示
-                    let provider = MoyaProvider<PrefectureWeatherRequest>()
-                    provider.request(PrefectureWeatherRequest(prefecture: item.name)) { (result) in
+                    WeatherAPIService().send(WeatherAPIService.PrefectureWeatherRequest(prefecture: item.name)) { (result) in
                         switch result {
                         case let .success(response):
-                            let decoder = JSONDecoder()
-                            let data = try! decoder.decode(WeatherModel.self, from: response.data)
-                            self.apiSetupViews(data: data)
+                            self.apiSetupViews(data: response)
                         case let .failure(error):
                             print(error)
                         }
@@ -101,13 +98,10 @@ class WeatherDetailViewController: UIViewController {
                 }
             } else {
                 // 現在地の天気を表示
-                let provider = MoyaProvider<CurrentLocationWeatherRequest>()
-                provider.request(CurrentLocationWeatherRequest(coordinate: coordinate)) { (result) in
+                WeatherAPIService().send(WeatherAPIService.CurrentLocationWeatherRequest(coordinate: coordinate)) { (result) in
                     switch result {
                     case let .success(response):
-                        let decoder = JSONDecoder()
-                        let data = try! decoder.decode(WeatherModel.self, from: response.data)
-                        self.apiSetupViews(data: data)
+                        self.apiSetupViews(data: response)
                     case let .failure(error):
                         print(error)
                     }
