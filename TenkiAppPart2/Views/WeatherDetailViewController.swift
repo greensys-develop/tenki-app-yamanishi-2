@@ -15,11 +15,16 @@ class WeatherDetailViewController: UIViewController {
     
     var selectedItem: (name: String, queryName: String)?
     var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
-    let f = DateFormatter()
-    private let disposeBag = DisposeBag()
+    
     var dateIsToday = false
     var prefectureFlag = false
+    
     var dailySelectedItem: Daily?
+    
+    let f = DateFormatter()
+    
+    private let disposeBag = DisposeBag()
+    private let viewModel = WeatherDetailViewModel()
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

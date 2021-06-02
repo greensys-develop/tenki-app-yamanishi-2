@@ -9,14 +9,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PrefectureTableViewController: ViewController {
+class PrefectureTableViewController: TopViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
-    var isWeekly = false
     var dailyLists: BehaviorRelay<[Daily]> = .init(value: [])
+    
+    var isWeekly = false
+    
     private let disposeBag = DisposeBag()
+    private let viewModel = PrefectureTableViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

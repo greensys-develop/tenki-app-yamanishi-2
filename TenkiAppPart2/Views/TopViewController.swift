@@ -11,13 +11,16 @@ import RxCocoa
 import Moya
 import PKHUD
 
-class ViewController: UIViewController {
+class TopViewController: UIViewController {
     
     @IBOutlet weak var prefectureButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
     @IBOutlet weak var weeklyButton: UIButton!
+    
     let cornerRadiusInt: CGFloat = 5
+    
     private let disposeBag = DisposeBag()
+    private let viewModel = TopViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
