@@ -13,6 +13,9 @@
 		A13A728726674F0A00187C67 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728626674F0A00187C67 /* TopViewModel.swift */; };
 		A13A728926674F2D00187C67 /* PrefectureTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728826674F2D00187C67 /* PrefectureTableViewModel.swift */; };
 		A13A728B26674F3E00187C67 /* WeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728A26674F3E00187C67 /* WeatherDetailViewModel.swift */; };
+		A13A728D26675CE900187C67 /* WeeklyTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13A728C26675CE900187C67 /* WeeklyTableView.storyboard */; };
+		A13A728F26675D2800187C67 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728E26675D2800187C67 /* WeeklyTableViewController.swift */; };
+		A13A729126675DEF00187C67 /* WeeklyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A729026675DEF00187C67 /* WeeklyTableViewModel.swift */; };
 		A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FC265DD63800770904 /* AppDelegate.swift */; };
 		A189D9FF265DD63800770904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FE265DD63800770904 /* SceneDelegate.swift */; };
 		A189DA01265DD63800770904 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA00265DD63800770904 /* TopViewController.swift */; };
@@ -40,6 +43,9 @@
 		A13A728626674F0A00187C67 /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		A13A728826674F2D00187C67 /* PrefectureTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureTableViewModel.swift; sourceTree = "<group>"; };
 		A13A728A26674F3E00187C67 /* WeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewModel.swift; sourceTree = "<group>"; };
+		A13A728C26675CE900187C67 /* WeeklyTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeeklyTableView.storyboard; sourceTree = "<group>"; };
+		A13A728E26675D2800187C67 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
+		A13A729026675DEF00187C67 /* WeeklyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewModel.swift; sourceTree = "<group>"; };
 		A189D9F9265DD63800770904 /* TenkiAppPart2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenkiAppPart2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A189D9FC265DD63800770904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A189D9FE265DD63800770904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		A189DA49265E264800770904 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A13A728E26675D2800187C67 /* WeeklyTableViewController.swift */,
 				A189DA12265DE48800770904 /* PrefectureTableViewController.swift */,
 				A189DA00265DD63800770904 /* TopViewController.swift */,
 				A189DA18265E075800770904 /* WeatherDetailViewController.swift */,
@@ -175,6 +182,7 @@
 				A13A728626674F0A00187C67 /* TopViewModel.swift */,
 				A13A728826674F2D00187C67 /* PrefectureTableViewModel.swift */,
 				A13A728A26674F3E00187C67 /* WeatherDetailViewModel.swift */,
+				A13A729026675DEF00187C67 /* WeeklyTableViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 				A189DA02265DD63800770904 /* Main.storyboard */,
 				A189DA10265DE46900770904 /* PrefectureTableView.storyboard */,
 				A189DA16265E061900770904 /* WeatherDetailView.storyboard */,
+				A13A728C26675CE900187C67 /* WeeklyTableView.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -276,6 +285,7 @@
 				A189DA09265DD63900770904 /* LaunchScreen.storyboard in Resources */,
 				A189DA11265DE46900770904 /* PrefectureTableView.storyboard in Resources */,
 				A189DA06265DD63900770904 /* Assets.xcassets in Resources */,
+				A13A728D26675CE900187C67 /* WeeklyTableView.storyboard in Resources */,
 				A189DA17265E061900770904 /* WeatherDetailView.storyboard in Resources */,
 				A189DA04265DD63800770904 /* Main.storyboard in Resources */,
 			);
@@ -336,10 +346,12 @@
 				A189DA47265E25F700770904 /* PrefectureWeatherRequest.swift in Sources */,
 				A13A728926674F2D00187C67 /* PrefectureTableViewModel.swift in Sources */,
 				A189DA01265DD63800770904 /* TopViewController.swift in Sources */,
+				A13A729126675DEF00187C67 /* WeeklyTableViewModel.swift in Sources */,
 				A13A728726674F0A00187C67 /* TopViewModel.swift in Sources */,
 				A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */,
 				A13A728B26674F3E00187C67 /* WeatherDetailViewModel.swift in Sources */,
 				A189DA15265DE62900770904 /* Prefecture.swift in Sources */,
+				A13A728F26675D2800187C67 /* WeeklyTableViewController.swift in Sources */,
 				A13A727F2664CFB800187C67 /* CurrentLocationWeatherRequest.swift in Sources */,
 				A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */,
 				A13A72812664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift in Sources */,

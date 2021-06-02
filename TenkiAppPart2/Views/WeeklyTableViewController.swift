@@ -1,22 +1,23 @@
 //
-//  PrefectureTableViewController.swift
+//  WeeklyTableViewController.swift
 //  TenkiAppPart2
 //
-//  Created by Mayumi Yamanishi on 2021/05/26.
+//  Created by Mayumi Yamanishi on 2021/06/02.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-class PrefectureTableViewController: UIViewController {
+class WeeklyTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
+    var dailyLists: BehaviorRelay<[Daily]> = .init(value: [])
     
     private let disposeBag = DisposeBag()
-    private let viewModel = PrefectureTableViewModel()
+    private let viewModel = WeeklyTableViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,17 +33,15 @@ class PrefectureTableViewController: UIViewController {
         
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
-                nextView.selectedItem = prefecture[indexPath.row]
-                nextView.prefectureFlag = true
-                nextView.dateIsToday = true
+                nextView.dailySelectedItem = self.dailyLists.value[indexPath.row]
                 self.present(nextView, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }
     
     private func setupTableView() {
-        prefectures.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
-            cell.textLabel?.text = element.name
+        dailyLists.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
+            cell.textLabel?.text = Util.unixToString(date: TimeInterval(element.dt))
         }
         .disposed(by: disposeBag)
     }

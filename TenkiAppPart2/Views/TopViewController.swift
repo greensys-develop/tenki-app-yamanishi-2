@@ -95,9 +95,8 @@ class TopViewController: UIViewController {
                 return
             }
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "PrefectureTableView", bundle: nil)
-            let nextView = storyboard.instantiateViewController(withIdentifier: "PrefectureTableView") as! PrefectureTableViewController
-            nextView.isWeekly = true
+            let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
+            let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
             nextView.navigationItem.title = "現在地の週間天気"
             
             // 週間天気のAPIを取得
