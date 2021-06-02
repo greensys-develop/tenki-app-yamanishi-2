@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OneCallModel: Codable {
+struct OneCallResponse: Codable {
     let lat: Double
     let lon: Double
     let timezone: String

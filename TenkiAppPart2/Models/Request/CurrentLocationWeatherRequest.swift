@@ -9,7 +9,7 @@ import Moya
 
 extension WeatherAPIService {
     struct CurrentLocationWeatherRequest: APITargetType {
-        typealias Response = WeatherModel
+        typealias Response = WeatherResponse
         var path: String { return "/weather" }
         var task: Task { return .requestParameters(parameters: ["lat" : self.coordinate.lat, "lon": self.coordinate.lon, "lang": "ja", "APPID": appid], encoding: URLEncoding.default) }
         var coordinate: Coordinate

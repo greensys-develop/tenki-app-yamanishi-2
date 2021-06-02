@@ -47,7 +47,7 @@ class WeatherDetailViewController: UIViewController {
         setupMoya()
     }
     
-    private func apiSetupViews(data: WeatherModel) {
+    private func apiSetupViews(data: WeatherResponse) {
         titleLabel.text = data.name
         maxTempLabel.text = "最高気温：" + String(round(data.main.temp_max - 273.15)) + "℃"
         minTempLabel.text = "最低気温：" + String(round(data.main.temp_min - 273.15)) + "℃"

@@ -23,10 +23,10 @@
 		A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA18265E075800770904 /* WeatherDetailViewController.swift */; };
 		A189DA1B265E189400770904 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA1A265E189400770904 /* ApiService.swift */; };
 		A189DA47265E25F700770904 /* PrefectureWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA46265E25F700770904 /* PrefectureWeatherRequest.swift */; };
-		A189DA4F265E2E5100770904 /* WeatherModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */; };
+		A189DA4F265E2E5100770904 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA4E265E2E5100770904 /* WeatherResponse.swift */; };
 		A189DA51265F419D00770904 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA50265F419D00770904 /* Util.swift */; };
 		A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA53265F53B800770904 /* UIImageViewExtension.swift */; };
-		A189DA56265F58C300770904 /* OneCallModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA55265F58C300770904 /* OneCallModelResponse.swift */; };
+		A189DA56265F58C300770904 /* OneCallResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA55265F58C300770904 /* OneCallResponse.swift */; };
 		A189DA58265F591D00770904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA57265F591D00770904 /* LocationManager.swift */; };
 		A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA592660A8E800770904 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -50,10 +50,10 @@
 		A189DA18265E075800770904 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		A189DA1A265E189400770904 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		A189DA46265E25F700770904 /* PrefectureWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureWeatherRequest.swift; sourceTree = "<group>"; };
-		A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelResponse.swift; sourceTree = "<group>"; };
+		A189DA4E265E2E5100770904 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		A189DA50265F419D00770904 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		A189DA53265F53B800770904 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		A189DA55265F58C300770904 /* OneCallModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallModelResponse.swift; sourceTree = "<group>"; };
+		A189DA55265F58C300770904 /* OneCallResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallResponse.swift; sourceTree = "<group>"; };
 		A189DA57265F591D00770904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A189DA592660A8E800770904 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenkiAppPart2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,8 +92,8 @@
 		A13A72832664D0AF00187C67 /* Renponse */ = {
 			isa = PBXGroup;
 			children = (
-				A189DA55265F58C300770904 /* OneCallModelResponse.swift */,
-				A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */,
+				A189DA55265F58C300770904 /* OneCallResponse.swift */,
+				A189DA4E265E2E5100770904 /* WeatherResponse.swift */,
 			);
 			path = Renponse;
 			sourceTree = "<group>";
@@ -324,10 +324,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A189DA56265F58C300770904 /* OneCallModelResponse.swift in Sources */,
+				A189DA56265F58C300770904 /* OneCallResponse.swift in Sources */,
 				A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */,
 				A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */,
-				A189DA4F265E2E5100770904 /* WeatherModelResponse.swift in Sources */,
+				A189DA4F265E2E5100770904 /* WeatherResponse.swift in Sources */,
 				A189DA47265E25F700770904 /* PrefectureWeatherRequest.swift in Sources */,
 				A189DA01265DD63800770904 /* ViewController.swift in Sources */,
 				A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */,
