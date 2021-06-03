@@ -69,8 +69,8 @@ class TopViewController: UIViewController {
                 case let .success(daily):
                     let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
                     let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
+                    nextView.setDailyLists(dailyLists: .init(value: daily))
                     DispatchQueue.main.async {
-                        nextView.dailyLists = .init(value: daily)
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
                 case .failure(let error):
