@@ -27,12 +27,9 @@ class TopViewController: UIViewController {
         
         setupViews()
         
-        prefectureButton?.rx.tap.bind(to: button1TapBinder).disposed(by: disposeBag)
-        currentLocationButton?.rx.tap.bind(to: button2TapBinder).disposed(by: disposeBag)
-        weeklyButton?.rx.tap.bind(to: button3TapBinder).disposed(by: disposeBag)
-        
-        // 現在地の取得
-        LocationManager.shared.initialize()
+        prefectureButton?.rx.tap.bind(to: prefectureTapBinder).disposed(by: disposeBag)
+        currentLocationButton?.rx.tap.bind(to: currentLocationTapBinder).disposed(by: disposeBag)
+        weeklyButton?.rx.tap.bind(to: weeklyTapBinder).disposed(by: disposeBag)
 
     }
     
@@ -40,19 +37,18 @@ class TopViewController: UIViewController {
         present(viewModel.getErrorAlertView(error: error), animated: true, completion: nil)
     }
     
-    private var button1TapBinder: Binder<()> {
+    private var prefectureTapBinder: Binder<()> {
         return Binder(self) { base, _  in
             let storyboard: UIStoryboard = UIStoryboard(name: "PrefectureTableView", bundle: nil)
             let nextView = storyboard.instantiateViewController(withIdentifier: "PrefectureTableView") as! PrefectureTableViewController
-            nextView.navigationItem.title = "都道府県の本日の天気"
             self.navigationController?.pushViewController(nextView, animated: true)
         }
     }
     
-    private var button2TapBinder: Binder<()> {
+    private var currentLocationTapBinder: Binder<()> {
         return Binder(self) { base, _  in
             // 位置情報取得の確認
-            guard let coordinate = LocationManager.shared.coordinate else {
+            guard let coordinate = self.viewModel.getCoordinate() else {
                 self.showAlert(error: .locationError)
                 return
             }
@@ -62,19 +58,17 @@ class TopViewController: UIViewController {
             nextView.coordinate = (lat: coordinate.latitude, lon: coordinate.longitude)
             nextView.dateIsToday = true
             nextView.prefectureFlag = false
-            nextView.navigationItem.title = "現在地の本日の天気"
             self.present(nextView, animated: true, completion: nil)
         }
     }
     
-    private var button3TapBinder: Binder<()> {
+    private var weeklyTapBinder: Binder<()> {
         return Binder(self) { base, _  in
             self.viewModel.queryCurrentLocationWeather() { result in
                 switch result {
                 case let .success(daily):
                     let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
                     let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
-                    nextView.navigationItem.title = "現在地の週間天気"
                     DispatchQueue.main.async {
                         nextView.dailyLists = .init(value: daily)
                         self.navigationController?.pushViewController(nextView, animated: true)
@@ -83,32 +77,6 @@ class TopViewController: UIViewController {
                     self.showAlert(error: error)
                 }
             }
-            
-//            guard let coordinate = LocationManager.shared.coordinate else {
-//                self.showAlert()
-//                return
-//            }
-//
-//            let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
-//            let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
-//            nextView.navigationItem.title = "現在地の週間天気"
-            
-//            // 週間天気のAPIを取得
-//            WeatherAPIService().send(WeatherAPIService.WeeklyCurrentLocationWeatherRequest(coordinate: (lat: coordinate.latitude, lon: coordinate.longitude))) { (result) in
-//                switch result {
-//                case let .success(response):
-//                    guard let daily = response.daily, !daily.isEmpty else {
-//                        HUD.flash(.labeledError(title: "通信が正常動作できませんでした。", subtitle: nil))
-//                        return
-//                    }
-//                    DispatchQueue.main.async {
-//                        nextView.dailyLists = .init(value: daily)
-//                        self.navigationController?.pushViewController(nextView, animated: true)
-//                    }
-//                case let .failure(error):
-//                    print(error)
-//                }
-//            }
         }
     }
     

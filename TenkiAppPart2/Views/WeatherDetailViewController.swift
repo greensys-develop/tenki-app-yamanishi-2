@@ -124,6 +124,10 @@ class WeatherDetailViewController: UIViewController {
     }
     
     func initSetupView() {
+        if dateIsToday && !prefectureFlag{
+            navigationController?.title = "現在地の本日の天気"
+        }
+        
         titleLabel.text = ""
         dateLabel.text = f.string(from: Date())
         maxTempLabel.text = ""

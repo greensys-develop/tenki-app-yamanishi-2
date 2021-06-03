@@ -8,6 +8,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import CoreLocation
 
 enum TopViewError: Error {
     case locationError
@@ -17,8 +18,18 @@ enum TopViewError: Error {
 
 final class TopViewModel {
     
+    init() {
+        // 現在地の取得
+        LocationManager.shared.initialize()
+    }
+    
+    func getCoordinate() -> CLLocationCoordinate2D? {
+        return LocationManager.shared.coordinate
+    }
+    
     func queryCurrentLocationWeather(completion: @escaping (Result<[Daily], TopViewError>) -> Void) {
-        guard let coordinate = LocationManager.shared.coordinate else {
+        
+        guard let coordinate = getCoordinate() else {
             completion(.failure(.locationError))
             return
         }

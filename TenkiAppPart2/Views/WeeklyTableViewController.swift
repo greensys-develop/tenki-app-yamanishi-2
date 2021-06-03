@@ -24,6 +24,8 @@ class WeeklyTableViewController: UIViewController {
         
         setupTableView()
         setupTapTableViewCell()
+        
+        navigationController?.title = "現在地の週間天気"
     }
     
     private func setupTapTableViewCell() {

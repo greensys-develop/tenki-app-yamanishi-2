@@ -23,6 +23,8 @@ class PrefectureTableViewController: UIViewController {
         
         setupTableView()
         setupTapTableViewCell()
+        
+        navigationController?.title = "都道府県の本日の天気"
     }
     
     private func setupTapTableViewCell() {
