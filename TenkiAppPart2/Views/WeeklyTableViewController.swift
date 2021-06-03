@@ -12,13 +12,21 @@ import RxCocoa
 class WeeklyTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
-    var dailyLists: BehaviorRelay<[Daily]> = .init(value: [])
-    
+        
     private let disposeBag = DisposeBag()
-    private let viewModel = WeeklyTableViewModel()
+    private var viewModel: WeeklyTableViewModel
+    
+    init(coordinate: Coordinate, dailyLists: BehaviorRelay<[Daily]>) {
+        viewModel = WeeklyTableViewModel(coordinate: coordinate,
+                                         dailyLists: dailyLists)
 
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,14 +43,14 @@ class WeeklyTableViewController: UIViewController {
         
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
-                nextView.dailySelectedItem = self.dailyLists.value[indexPath.row]
+                nextView.dailySelectedItem = self.viewModel.dailyLists.value[indexPath.row]
                 self.present(nextView, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }
     
     private func setupTableView() {
-        dailyLists.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
+        viewModel.dailyLists.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
             cell.textLabel?.text = Util.unixToString(date: TimeInterval(element.dt))
         }
         .disposed(by: disposeBag)

@@ -10,5 +10,11 @@ import RxCocoa
 import RxSwift
 
 final class WeeklyTableViewModel {
-    
+    let coordinate: Coordinate
+    let dailyLists: BehaviorRelay<[Daily]>
+
+    init(coordinate: Coordinate, dailyLists: BehaviorRelay<[Daily]>) {
+        self.coordinate = coordinate
+        self.dailyLists = dailyLists
+    }
 }
