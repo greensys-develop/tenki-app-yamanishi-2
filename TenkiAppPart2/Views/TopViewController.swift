@@ -36,29 +36,8 @@ class TopViewController: UIViewController {
 
     }
     
-    private func showAlert() {
-        let alert: UIAlertController = UIAlertController(title: "位置情報が取得されていません。", message: "位置情報を取得しますか？", preferredStyle:  UIAlertController.Style.alert)
-        let defaultAction: UIAlertAction = UIAlertAction(title: "はい", style: UIAlertAction.Style.default) {_ in
-        // 設定画面に移行
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-              return
-            }
-            if UIApplication.shared.canOpenURL(settingsUrl)  {
-              if #available(iOS 10.0, *) {
-                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                })
-              }
-              else  {
-                UIApplication.shared.openURL(settingsUrl)
-              }
-            }
-        }
-        let cancelAction: UIAlertAction = UIAlertAction(title: "いいえ", style: UIAlertAction.Style.cancel, handler: nil)
-        
-        alert.addAction(cancelAction)
-        alert.addAction(defaultAction)
-        
-        present(alert, animated: true, completion: nil)
+    private func showAlert(error: TopViewError) {
+        present(viewModel.getErrorAlertView(error: error), animated: true, completion: nil)
     }
     
     private var button1TapBinder: Binder<()> {
@@ -74,7 +53,7 @@ class TopViewController: UIViewController {
         return Binder(self) { base, _  in
             // 位置情報取得の確認
             guard let coordinate = LocationManager.shared.coordinate else {
-                self.showAlert()
+                self.showAlert(error: .locationError)
                 return
             }
             
@@ -101,9 +80,7 @@ class TopViewController: UIViewController {
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
                 case .failure(let error):
-                    if error == TopViewError.locationError {
-                        self.showAlert()
-                    }
+                    self.showAlert(error: error)
                 }
             }
             

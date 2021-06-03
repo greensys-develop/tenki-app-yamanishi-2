@@ -41,7 +41,7 @@ class PrefectureTableViewController: UIViewController {
     }
     
     private func setupTableView() {
-        prefecturesArray.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
+        viewModel.prefectures.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
             cell.textLabel?.text = element.name
         }
         .disposed(by: disposeBag)
