@@ -90,31 +90,48 @@ class TopViewController: UIViewController {
     
     private var button3TapBinder: Binder<()> {
         return Binder(self) { base, _  in
-            guard let coordinate = LocationManager.shared.coordinate else {
-                self.showAlert()
-                return
-            }
-            
-            let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
-            let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
-            nextView.navigationItem.title = "現在地の週間天気"
-            
-            // 週間天気のAPIを取得
-            WeatherAPIService().send(WeatherAPIService.WeeklyCurrentLocationWeatherRequest(coordinate: (lat: coordinate.latitude, lon: coordinate.longitude))) { (result) in
+            self.viewModel.queryCurrentLocationWeather() { result in
                 switch result {
-                case let .success(response):
-                    guard let daily = response.daily, !daily.isEmpty else {
-                        HUD.flash(.labeledError(title: "通信が正常動作できませんでした。", subtitle: nil))
-                        return
-                    }
+                case let .success(daily):
+                    let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
+                    let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
+                    nextView.navigationItem.title = "現在地の週間天気"
                     DispatchQueue.main.async {
                         nextView.dailyLists = .init(value: daily)
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
-                case let .failure(error):
-                    print(error)
+                case .failure(let error):
+                    if error == TopViewError.locationError {
+                        self.showAlert()
+                    }
                 }
             }
+            
+//            guard let coordinate = LocationManager.shared.coordinate else {
+//                self.showAlert()
+//                return
+//            }
+//
+//            let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
+//            let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
+//            nextView.navigationItem.title = "現在地の週間天気"
+            
+//            // 週間天気のAPIを取得
+//            WeatherAPIService().send(WeatherAPIService.WeeklyCurrentLocationWeatherRequest(coordinate: (lat: coordinate.latitude, lon: coordinate.longitude))) { (result) in
+//                switch result {
+//                case let .success(response):
+//                    guard let daily = response.daily, !daily.isEmpty else {
+//                        HUD.flash(.labeledError(title: "通信が正常動作できませんでした。", subtitle: nil))
+//                        return
+//                    }
+//                    DispatchQueue.main.async {
+//                        nextView.dailyLists = .init(value: daily)
+//                        self.navigationController?.pushViewController(nextView, animated: true)
+//                    }
+//                case let .failure(error):
+//                    print(error)
+//                }
+//            }
         }
     }
     

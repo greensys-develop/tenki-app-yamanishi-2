@@ -11,4 +11,7 @@ import RxSwift
 
 final class PrefectureTableViewModel {
     
+    // 都道府県
+    let prefectures = BehaviorRelay<[Prefecture]>(value: prefecturesArray)
+    
 }
