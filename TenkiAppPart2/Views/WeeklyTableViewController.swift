@@ -33,6 +33,7 @@ class WeeklyTableViewController: UIViewController {
         // tableViewのセルをタップした時のメソッド
         let storyboard: UIStoryboard = UIStoryboard(name: "WeatherDetailView", bundle: nil)
         let nextView = storyboard.instantiateViewController(withIdentifier: "WeatherDetailView") as! WeatherDetailViewController
+        nextView.viewName = WeatherDetailView.WeeklyCurrentLocation
         
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in

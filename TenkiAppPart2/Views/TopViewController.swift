@@ -56,8 +56,7 @@ class TopViewController: UIViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "WeatherDetailView", bundle: nil)
             let nextView = storyboard.instantiateViewController(withIdentifier: "WeatherDetailView") as! WeatherDetailViewController
             nextView.coordinate = (lat: coordinate.latitude, lon: coordinate.longitude)
-            nextView.dateIsToday = true
-            nextView.prefectureFlag = false
+            nextView.viewName = WeatherDetailView.CurrentLocation
             self.present(nextView, animated: true, completion: nil)
         }
     }

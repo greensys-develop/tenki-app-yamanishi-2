@@ -35,8 +35,7 @@ class PrefectureTableViewController: UIViewController {
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 nextView.selectedItem = prefecture[indexPath.row]
-                nextView.prefectureFlag = true
-                nextView.dateIsToday = true
+                nextView.viewName = WeatherDetailView.Prefecture
                 self.present(nextView, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
