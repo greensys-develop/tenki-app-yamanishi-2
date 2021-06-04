@@ -39,7 +39,7 @@ struct Current: Codable {
 
 struct Minutely: Codable {
     let dt: Int
-    let precipitation: Int
+    let precipitation: Double
 }
 
 struct Hourly: Codable {

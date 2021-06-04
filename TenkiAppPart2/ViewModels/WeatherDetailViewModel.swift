@@ -11,36 +11,21 @@ import RxSwift
 import CoreLocation
 
 final class WeatherDetailViewModel {
+    var data: WeatherResponse?
     
     func getCoordinate() -> CLLocationCoordinate2D? {
         return LocationManager.shared.coordinate
     }
     
-    func queryCurrentLocationWeather(completion: @escaping (Result<WeatherResponse, TopViewError>) -> Void) {
-        
-        guard let coordinate = getCoordinate() else {
-            completion(.failure(.locationError))
-            return
-        }
-        
-        WeatherAPIService().send(WeatherAPIService.CurrentLocationWeatherRequest(coordinate: (lat: coordinate.latitude, lon: coordinate.longitude))) { (result) in
-            switch result {
-            case let .success(response):
-                completion(.success(response))
-            case let .failure(error):
-                print(error)
-            }
+    func queryCurrentLocationWeather_Rx(coordinate: Coordinate) -> Single<Void> {
+        return WeatherAPIService.shared.sendRx(WeatherAPIService.CurrentLocationWeatherRequest(coordinate: (lat: coordinate.lat, lon: coordinate.lon))).map { (response) in
+            self.data = response
         }
     }
     
-    func queryPrefectureWeather(item: (name: String, queryName: String) ,completion: @escaping (Result<WeatherResponse, TopViewError>) -> Void ) {
-        WeatherAPIService().send(WeatherAPIService.PrefectureWeatherRequest(prefecture: item.name)) { (result) in
-            switch result {
-            case let .success(response):
-                completion(.success(response))
-            case let .failure(error):
-                completion(.failure(.apiFailure(error)))
-            }
+    func queryPrefectureWeather_Rx(prefecture: String) -> Single<Void> {
+        return WeatherAPIService.shared.sendRx(WeatherAPIService.PrefectureWeatherRequest(prefecture: prefecture)).map { (response) in
+            self.data = response
         }
     }
     

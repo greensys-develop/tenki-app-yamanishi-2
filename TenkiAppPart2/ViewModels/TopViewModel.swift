@@ -31,7 +31,6 @@ final class TopViewModel {
     }
     
     func queryCurrentLocationWeather(coordinate: CLLocationCoordinate2D) -> Single<Void> {
-                
         // 週間天気のAPIを取得
         return WeatherAPIService.shared.sendRx(WeatherAPIService.WeeklyCurrentLocationWeatherRequest(coordinate: (lat: coordinate.latitude, lon: coordinate.longitude)))
             .map { (response) in

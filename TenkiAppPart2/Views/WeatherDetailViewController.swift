@@ -96,33 +96,33 @@ class WeatherDetailViewController: UIViewController {
     
     private func setupMoya(view: WeatherDetailView) {
         switch view {
+        
         case .Prefecture:
             dateLabel.text = f.string(from: Date())
             if let item = selectedItem {
-                self.viewModel.queryPrefectureWeather(item: item) { result in
-                    switch result {
-                    case let .success(response):
-                        self.apiSetupViews(data: response)
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
+                self.viewModel.queryPrefectureWeather_Rx(prefecture: item.name).subscribe {
+                    guard let data = self.viewModel.data else { return }
+                    self.apiSetupViews(data: data)
+                } onError: { (error) in
+                    print(error)
+                }.disposed(by: disposeBag)
             }
+            
         case .CurrentLocation:
             dateLabel.text = f.string(from: Date())
             
-            self.viewModel.queryCurrentLocationWeather() { result in
-                switch result {
-                case let .success(response):
-                    self.apiSetupViews(data: response)
-                case .failure(let error):
-                    print(error)
-                }
-            }
+            self.viewModel.queryCurrentLocationWeather_Rx(coordinate: self.coordinate).subscribe {
+                guard let data = self.viewModel.data else { return }
+                self.apiSetupViews(data: data)
+            } onError: { (error) in
+                print(error)
+            }.disposed(by: disposeBag)
+            
         case .WeeklyCurrentLocation:
             if let daily = dailySelectedItem {
                 apiSetupViews(data: daily)
             }
+            
         default:
             break
         }
