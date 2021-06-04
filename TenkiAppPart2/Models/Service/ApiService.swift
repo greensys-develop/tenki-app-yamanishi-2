@@ -6,6 +6,7 @@
 //
 
 import Moya
+import RxSwift
 
 let appid = "5dfc577c1d7d94e9e23a00431582f1ac"
 
@@ -25,21 +26,21 @@ protocol WeatherAPI {
 }
 
 class WeatherAPIService: WeatherAPI {
+    private let disposeBag = DisposeBag()
+    
     func send<T>(_ request: T, completion: @escaping (Result<T.Response, MoyaError>) -> Void) where T : APITargetType {
         let provider = MoyaProvider<T>()
-        provider.request(request) { (result) in
-            switch result {
-            case let .success(response):
-                let decoder = JSONDecoder()
-                if let model = try? decoder.decode(T.Response.self, from: response.data) {
-                    completion(.success(model))
-                    print(try! response.mapJSON())
-                } else {
-                    completion(.failure(.jsonMapping(response)))
+        provider.rx.request(request)
+            .map { (response) -> T.Response? in
+                return try? JSONDecoder().decode(T.Response.self, from: response.data)
+            }.subscribe(onSuccess: {(response) in
+                guard let unwrappedResponse = response else {
+                    completion(.failure(.jsonMapping(response as! Response)))
+                    return
                 }
-            case let .failure(error):
-                completion(.failure(error))
-            }
-        }
+                completion(.success(unwrappedResponse))
+            }, onError: {(error) in
+                completion(.failure(error as! MoyaError))
+            })
     }
 }

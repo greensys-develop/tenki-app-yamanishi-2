@@ -8,7 +8,7 @@ target 'TenkiAppPart2' do
   # Pods for TenkiAppPart2
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'Moya'
+  pod 'Moya/RxSwift'
   pod 'PKHUD'
 
 end
