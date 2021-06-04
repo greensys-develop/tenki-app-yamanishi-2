@@ -63,19 +63,26 @@ class TopViewController: UIViewController {
     
     private var weeklyTapBinder: Binder<()> {
         return Binder(self) { base, _  in
-            self.viewModel.queryCurrentLocationWeather() { result in
-                switch result {
-                case let .success(daily):
+            guard let cordinate = self.viewModel.getCoordinate() else {
+                return self.showAlert(error: .locationError)
+            }
+            self.viewModel.queryCurrentLocationWeather(coordinate: cordinate)
+                .subscribe(onSuccess: {
+                    print("success")
+                    guard let daily = self.viewModel.daily else {
+                        self.showAlert(error: .dailyNotFound)
+                        return
+                    }
                     let storyboard: UIStoryboard = UIStoryboard(name: "WeeklyTableView", bundle: nil)
                     let nextView = storyboard.instantiateViewController(withIdentifier: "WeeklyTableView") as! WeeklyTableViewController
                     nextView.setDailyLists(dailyLists: .init(value: daily))
                     DispatchQueue.main.async {
                         self.navigationController?.pushViewController(nextView, animated: true)
                     }
-                case .failure(let error):
-                    self.showAlert(error: error)
-                }
-            }
+                }, onError: { (error) in
+                    print("error")
+                    self.showAlert(error: .apiFailure(error))
+                }).disposed(by: self.disposeBag)
         }
     }
     

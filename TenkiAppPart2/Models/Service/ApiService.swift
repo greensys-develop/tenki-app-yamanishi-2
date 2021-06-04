@@ -23,9 +23,32 @@ extension APITargetType {
 
 protocol WeatherAPI {
     func send<T: APITargetType>(_ request: T, completion: @escaping (Result<T.Response, Moya.MoyaError>) -> Void)
+    func sendRx<T: APITargetType>(_ request: T) -> Single<T.Response>
 }
 
 class WeatherAPIService: WeatherAPI {
+    static let shared = WeatherAPIService()
+    private let provider = MoyaProvider<MultiTarget>()
+    
+    func sendRx<T>(_ request: T) -> Single<T.Response> where T : APITargetType {
+        
+        Single<T.Response>.create { observer in
+                    self.makeRequest(request)
+                        .subscribe(onSuccess: { response in
+                            observer(.success(response))
+                        }, onError: { error in
+                            //プロジェクト全体で共通して行いたいエラーハンドリング等
+                            observer(.error(error))
+                        })
+                }
+    }
+    
+    private func makeRequest<T: APITargetType>(_ request: T) -> Single<T.Response> {
+        provider.rx
+            .request(MultiTarget(request))
+            .map(T.Response.self, failsOnEmptyData: false)
+    }
+    
     private let disposeBag = DisposeBag()
     
     func send<T>(_ request: T, completion: @escaping (Result<T.Response, MoyaError>) -> Void) where T : APITargetType {
