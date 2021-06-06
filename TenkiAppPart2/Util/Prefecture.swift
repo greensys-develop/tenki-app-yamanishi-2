@@ -14,7 +14,7 @@ struct Prefecture {
     let queryName: String
 }
 
-let prefectures: Observable<[Prefecture]> = .just([
+let prefecturesArray: [Prefecture] = [
     Prefecture(name: "北海道", queryName: "Hokkaido"),
     Prefecture(name: "青森県", queryName: "Aomori"),
     Prefecture(name: "岩手県", queryName: "Iwate"),
@@ -63,7 +63,7 @@ let prefectures: Observable<[Prefecture]> = .just([
     Prefecture(name: "鹿児島県", queryName: "Kagoshima"),
     Prefecture(name: "沖縄県", queryName: "Okinawa")
 
-])
+]
 
 let prefecture:[(name:String, queryName:String)] = [
     (name: "北海道", queryName: "Hokkaido"),

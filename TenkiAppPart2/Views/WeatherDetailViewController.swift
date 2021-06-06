@@ -11,15 +11,25 @@ import RxSwift
 import Moya
 import PKHUD
 
+enum WeatherDetailView {
+    case Prefecture
+    case CurrentLocation
+    case WeeklyCurrentLocation
+}
+
 class WeatherDetailViewController: UIViewController {
     
     var selectedItem: (name: String, queryName: String)?
     var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
-    let f = DateFormatter()
-    private let disposeBag = DisposeBag()
-    var dateIsToday = false
-    var prefectureFlag = false
+    
     var dailySelectedItem: Daily?
+    
+    var viewName: WeatherDetailView?
+    
+    let f = DateFormatter()
+    
+    private let disposeBag = DisposeBag()
+    private let viewModel = WeatherDetailViewModel()
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -43,11 +53,15 @@ class WeatherDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        initSetupView()
-        setupMoya()
+        guard let view = viewName else {
+            return
+        }
+        
+        initSetupView(view: view)
+        setupMoya(view: view)
     }
     
-    private func apiSetupViews(data: WeatherModel) {
+    private func apiSetupViews(data: WeatherResponse) {
         titleLabel.text = data.name
         maxTempLabel.text = "最高気温：" + String(round(data.main.temp_max - 273.15)) + "℃"
         minTempLabel.text = "最低気温：" + String(round(data.main.temp_min - 273.15)) + "℃"
@@ -80,35 +94,37 @@ class WeatherDetailViewController: UIViewController {
         rainyPercentLabel.text = "降水確率：" + String(Int(round((data.pop * 100)))) + "%"
     }
     
-    private func setupMoya() {
-        if dateIsToday {
-            // 今日の日付を表示
+    private func setupMoya(view: WeatherDetailView) {
+        switch view {
+        
+        case .Prefecture:
             dateLabel.text = f.string(from: Date())
-            if prefectureFlag {
-                if let item = selectedItem {
-                    // 都道府県の天気を表示
-                    WeatherAPIService().send(WeatherAPIService.PrefectureWeatherRequest(prefecture: item.name)) { (result) in
-                        switch result {
-                        case let .success(response):
-                            self.apiSetupViews(data: response)
-                        case let .failure(error):
-                            print(error)
-                        }
-                    }
-                }
-            } else {
-                // 現在地の天気を表示
-                WeatherAPIService().send(WeatherAPIService.CurrentLocationWeatherRequest(coordinate: coordinate)) { (result) in
-                    switch result {
-                    case let .success(response):
-                        self.apiSetupViews(data: response)
-                    case let .failure(error):
-                        print(error)
-                    }
-                }
+            if let item = selectedItem {
+                self.viewModel.queryPrefectureWeather_Rx(prefecture: item.name).subscribe {
+                    guard let data = self.viewModel.data else { return }
+                    self.apiSetupViews(data: data)
+                } onError: { (error) in
+                    print(error)
+                }.disposed(by: disposeBag)
             }
-        } else if let daily = dailySelectedItem {
-            apiSetupViews(data: daily)
+            
+        case .CurrentLocation:
+            dateLabel.text = f.string(from: Date())
+            
+            self.viewModel.queryCurrentLocationWeather_Rx(coordinate: self.coordinate).subscribe {
+                guard let data = self.viewModel.data else { return }
+                self.apiSetupViews(data: data)
+            } onError: { (error) in
+                print(error)
+            }.disposed(by: disposeBag)
+            
+        case .WeeklyCurrentLocation:
+            if let daily = dailySelectedItem {
+                apiSetupViews(data: daily)
+            }
+            
+        default:
+            break
         }
     }
     
@@ -118,7 +134,19 @@ class WeatherDetailViewController: UIViewController {
         }
     }
     
-    func initSetupView() {
+    //初期設定
+    func initSetupView(view: WeatherDetailView) {
+        switch view {
+        case .Prefecture:
+            navigationController?.title = "都道府県の本日の天気"
+        case .CurrentLocation:
+            navigationController?.title = "現在地の本日の天気"
+        case .WeeklyCurrentLocation:
+            navigationController?.title = "都道府県の週間天気"
+        default:
+            break
+        }
+        
         titleLabel.text = ""
         dateLabel.text = f.string(from: Date())
         maxTempLabel.text = ""

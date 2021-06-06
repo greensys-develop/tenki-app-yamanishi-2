@@ -9,7 +9,7 @@ import Moya
 
 extension WeatherAPIService {
     struct PrefectureWeatherRequest: APITargetType {
-        typealias Response = WeatherModel
+        typealias Response = WeatherResponse
         var path: String { return "/weather" }
         var task: Task { return .requestParameters(parameters: ["q" : self.prefecture, "lang": "ja", "APPID": appid], encoding: URLEncoding.default) }
         var prefecture: String

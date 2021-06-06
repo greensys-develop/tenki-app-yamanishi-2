@@ -9,20 +9,22 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PrefectureTableViewController: ViewController {
+class PrefectureTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     var coordinate: Coordinate = (lat: 0.0, lon: 0.0)
-    var isWeekly = false
-    var dailyLists: BehaviorRelay<[Daily]> = .init(value: [])
+    
     private let disposeBag = DisposeBag()
+    private let viewModel = PrefectureTableViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
         setupTapTableViewCell()
+        
+        navigationController?.title = "都道府県の本日の天気"
     }
     
     private func setupTapTableViewCell() {
@@ -32,30 +34,17 @@ class PrefectureTableViewController: ViewController {
         
         tableView.rx.itemSelected
             .subscribe(onNext: { indexPath in
-                if self.isWeekly {
-                    nextView.dailySelectedItem = self.dailyLists.value[indexPath.row]
-                } else {
-                    nextView.selectedItem = prefecture[indexPath.row]
-                    nextView.prefectureFlag = true
-                    nextView.dateIsToday = true
-                }
+                nextView.selectedItem = prefecture[indexPath.row]
+                nextView.viewName = WeatherDetailView.Prefecture
                 self.present(nextView, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }
     
     private func setupTableView() {
-        // tableViewの表示
-        if isWeekly {
-            dailyLists.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
-                cell.textLabel?.text = Util.unixToString(date: TimeInterval(element.dt))
-                }
-                .disposed(by: disposeBag)
-        } else {
-            prefectures.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
-                cell.textLabel?.text = element.name
-                }
-                .disposed(by: disposeBag)
+        viewModel.prefectures.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, element, cell in
+            cell.textLabel?.text = element.name
         }
+        .disposed(by: disposeBag)
     }
 }

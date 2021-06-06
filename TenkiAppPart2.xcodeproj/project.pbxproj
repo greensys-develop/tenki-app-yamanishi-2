@@ -10,9 +10,15 @@
 		2C80FCEF5E3F5C645B0FEC92 /* Pods_TenkiAppPart2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */; };
 		A13A727F2664CFB800187C67 /* CurrentLocationWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A727E2664CFB800187C67 /* CurrentLocationWeatherRequest.swift */; };
 		A13A72812664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A72802664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift */; };
+		A13A728726674F0A00187C67 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728626674F0A00187C67 /* TopViewModel.swift */; };
+		A13A728926674F2D00187C67 /* PrefectureTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728826674F2D00187C67 /* PrefectureTableViewModel.swift */; };
+		A13A728B26674F3E00187C67 /* WeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728A26674F3E00187C67 /* WeatherDetailViewModel.swift */; };
+		A13A728D26675CE900187C67 /* WeeklyTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13A728C26675CE900187C67 /* WeeklyTableView.storyboard */; };
+		A13A728F26675D2800187C67 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A728E26675D2800187C67 /* WeeklyTableViewController.swift */; };
+		A13A729126675DEF00187C67 /* WeeklyTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A729026675DEF00187C67 /* WeeklyTableViewModel.swift */; };
 		A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FC265DD63800770904 /* AppDelegate.swift */; };
 		A189D9FF265DD63800770904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189D9FE265DD63800770904 /* SceneDelegate.swift */; };
-		A189DA01265DD63800770904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA00265DD63800770904 /* ViewController.swift */; };
+		A189DA01265DD63800770904 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA00265DD63800770904 /* TopViewController.swift */; };
 		A189DA04265DD63800770904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A189DA02265DD63800770904 /* Main.storyboard */; };
 		A189DA06265DD63900770904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A189DA05265DD63900770904 /* Assets.xcassets */; };
 		A189DA09265DD63900770904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A189DA07265DD63900770904 /* LaunchScreen.storyboard */; };
@@ -23,22 +29,27 @@
 		A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA18265E075800770904 /* WeatherDetailViewController.swift */; };
 		A189DA1B265E189400770904 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA1A265E189400770904 /* ApiService.swift */; };
 		A189DA47265E25F700770904 /* PrefectureWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA46265E25F700770904 /* PrefectureWeatherRequest.swift */; };
-		A189DA4F265E2E5100770904 /* WeatherModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */; };
+		A189DA4F265E2E5100770904 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA4E265E2E5100770904 /* WeatherResponse.swift */; };
 		A189DA51265F419D00770904 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA50265F419D00770904 /* Util.swift */; };
 		A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA53265F53B800770904 /* UIImageViewExtension.swift */; };
-		A189DA56265F58C300770904 /* OneCallModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA55265F58C300770904 /* OneCallModelResponse.swift */; };
+		A189DA56265F58C300770904 /* OneCallResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA55265F58C300770904 /* OneCallResponse.swift */; };
 		A189DA58265F591D00770904 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA57265F591D00770904 /* LocationManager.swift */; };
-		A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189DA592660A8E800770904 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B30792B7A30FDB08647A433 /* Pods-TenkiAppPart2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenkiAppPart2.debug.xcconfig"; path = "Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2.debug.xcconfig"; sourceTree = "<group>"; };
 		A13A727E2664CFB800187C67 /* CurrentLocationWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationWeatherRequest.swift; sourceTree = "<group>"; };
 		A13A72802664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCurrentLocationWeatherRequest.swift; sourceTree = "<group>"; };
+		A13A728626674F0A00187C67 /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
+		A13A728826674F2D00187C67 /* PrefectureTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureTableViewModel.swift; sourceTree = "<group>"; };
+		A13A728A26674F3E00187C67 /* WeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewModel.swift; sourceTree = "<group>"; };
+		A13A728C26675CE900187C67 /* WeeklyTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeeklyTableView.storyboard; sourceTree = "<group>"; };
+		A13A728E26675D2800187C67 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
+		A13A729026675DEF00187C67 /* WeeklyTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewModel.swift; sourceTree = "<group>"; };
 		A189D9F9265DD63800770904 /* TenkiAppPart2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenkiAppPart2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A189D9FC265DD63800770904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A189D9FE265DD63800770904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A189DA00265DD63800770904 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A189DA00265DD63800770904 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		A189DA03265DD63800770904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A189DA05265DD63900770904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A189DA08265DD63900770904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,12 +61,11 @@
 		A189DA18265E075800770904 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		A189DA1A265E189400770904 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		A189DA46265E25F700770904 /* PrefectureWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureWeatherRequest.swift; sourceTree = "<group>"; };
-		A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelResponse.swift; sourceTree = "<group>"; };
+		A189DA4E265E2E5100770904 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		A189DA50265F419D00770904 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		A189DA53265F53B800770904 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		A189DA55265F58C300770904 /* OneCallModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallModelResponse.swift; sourceTree = "<group>"; };
+		A189DA55265F58C300770904 /* OneCallResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallResponse.swift; sourceTree = "<group>"; };
 		A189DA57265F591D00770904 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		A189DA592660A8E800770904 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		C77DDBF32889C8B571A52B43 /* Pods_TenkiAppPart2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenkiAppPart2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E11DE880972577FE60E096 /* Pods-TenkiAppPart2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenkiAppPart2.release.xcconfig"; path = "Target Support Files/Pods-TenkiAppPart2/Pods-TenkiAppPart2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +102,8 @@
 		A13A72832664D0AF00187C67 /* Renponse */ = {
 			isa = PBXGroup;
 			children = (
-				A189DA55265F58C300770904 /* OneCallModelResponse.swift */,
-				A189DA4E265E2E5100770904 /* WeatherModelResponse.swift */,
+				A189DA55265F58C300770904 /* OneCallResponse.swift */,
+				A189DA4E265E2E5100770904 /* WeatherResponse.swift */,
 			);
 			path = Renponse;
 			sourceTree = "<group>";
@@ -158,8 +168,9 @@
 		A189DA49265E264800770904 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A13A728E26675D2800187C67 /* WeeklyTableViewController.swift */,
 				A189DA12265DE48800770904 /* PrefectureTableViewController.swift */,
-				A189DA00265DD63800770904 /* ViewController.swift */,
+				A189DA00265DD63800770904 /* TopViewController.swift */,
 				A189DA18265E075800770904 /* WeatherDetailViewController.swift */,
 			);
 			path = Views;
@@ -168,7 +179,10 @@
 		A189DA4A265E265500770904 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A189DA592660A8E800770904 /* ListViewModel.swift */,
+				A13A728626674F0A00187C67 /* TopViewModel.swift */,
+				A13A728826674F2D00187C67 /* PrefectureTableViewModel.swift */,
+				A13A728A26674F3E00187C67 /* WeatherDetailViewModel.swift */,
+				A13A729026675DEF00187C67 /* WeeklyTableViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,6 +193,7 @@
 				A189DA02265DD63800770904 /* Main.storyboard */,
 				A189DA10265DE46900770904 /* PrefectureTableView.storyboard */,
 				A189DA16265E061900770904 /* WeatherDetailView.storyboard */,
+				A13A728C26675CE900187C67 /* WeeklyTableView.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -270,6 +285,7 @@
 				A189DA09265DD63900770904 /* LaunchScreen.storyboard in Resources */,
 				A189DA11265DE46900770904 /* PrefectureTableView.storyboard in Resources */,
 				A189DA06265DD63900770904 /* Assets.xcassets in Resources */,
+				A13A728D26675CE900187C67 /* WeeklyTableView.storyboard in Resources */,
 				A189DA17265E061900770904 /* WeatherDetailView.storyboard in Resources */,
 				A189DA04265DD63800770904 /* Main.storyboard in Resources */,
 			);
@@ -324,14 +340,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A189DA56265F58C300770904 /* OneCallModelResponse.swift in Sources */,
-				A189DA5A2660A8E800770904 /* ListViewModel.swift in Sources */,
+				A189DA56265F58C300770904 /* OneCallResponse.swift in Sources */,
 				A189DA19265E075800770904 /* WeatherDetailViewController.swift in Sources */,
-				A189DA4F265E2E5100770904 /* WeatherModelResponse.swift in Sources */,
+				A189DA4F265E2E5100770904 /* WeatherResponse.swift in Sources */,
 				A189DA47265E25F700770904 /* PrefectureWeatherRequest.swift in Sources */,
-				A189DA01265DD63800770904 /* ViewController.swift in Sources */,
+				A13A728926674F2D00187C67 /* PrefectureTableViewModel.swift in Sources */,
+				A189DA01265DD63800770904 /* TopViewController.swift in Sources */,
+				A13A729126675DEF00187C67 /* WeeklyTableViewModel.swift in Sources */,
+				A13A728726674F0A00187C67 /* TopViewModel.swift in Sources */,
 				A189D9FD265DD63800770904 /* AppDelegate.swift in Sources */,
+				A13A728B26674F3E00187C67 /* WeatherDetailViewModel.swift in Sources */,
 				A189DA15265DE62900770904 /* Prefecture.swift in Sources */,
+				A13A728F26675D2800187C67 /* WeeklyTableViewController.swift in Sources */,
 				A13A727F2664CFB800187C67 /* CurrentLocationWeatherRequest.swift in Sources */,
 				A189DA54265F53B800770904 /* UIImageViewExtension.swift in Sources */,
 				A13A72812664CFD000187C67 /* WeeklyCurrentLocationWeatherRequest.swift in Sources */,
